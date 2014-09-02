@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<html>
+<head>
+    <title>Fuck-o-meter</title>
+    <link rel="stylesheet" type="text/css" href="css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <script src="libs/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+
+</head>
+<body>
+    <div class="page-wrap">
+        <h1 id="title">Tweet-<span>O</span>-METER</h1>
+        <hr>
+        <br/>
+        <div id="form">
+            <input id="username" type="text" placeholder="@username"/>
+            <input type="image" id="submit" onclick="getFucksFromServer()" src="images/submit.gif" />
+        </div>
+        <div id="user"></div>
+        <div id="result"></div>
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+        <div id="cyclerContainer">
+            <div id="cycler"></div>
+            <div id="cycler2"></div>
+        </div>
+    </div>
+    <footer id="footer">
+        <img src="images/Twitter_bird_icon.png" alt="twitter.com" href="http://twitter.com"/>
+        <span>Created by Andrew McDowell</span>
+    </footer>
+</body>
+</html>
