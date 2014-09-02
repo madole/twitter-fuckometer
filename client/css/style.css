@@ -1,61 +1,89 @@
+* {
+    margin: 0;
+}
+
 html, body {
     height: 100%;
     font-family: 'Lato', sans-serif;
 }
 
-#title {
-    text-align: center;
-    font-size: 9em;
-
-}
-#title > span {
-    color: lightblue;
-}
-
-
 hr {
     border: 0;
     height: 0; /* Firefox... */
-    box-shadow: 0 0 10px 1px lightblue;
-}
-hr:after {  /* Not really supposed to work, but does */
-    content: "\00a0";  /* Prevent margin collapse */
+    box-shadow: 0 0 10px 1px lightskyblue;
 }
 
-#form{
+hr:after {
+    /* Not really supposed to work, but does */
+    content: "\00a0"; /* Prevent margin collapse */
+}
+
+a{
+    text-decoration: none;
+    color: lightskyblue;
+}
+
+a:hover{
+    color:lightblue;
+}
+
+/*******************TITLE*******************/
+#title {
+    text-align: center;
+    font-size: 8em;
+}
+
+#title > span {
+    color: lightskyblue;
+}
+/*******************TITLE*******************/
+
+/********************FORM********************/
+#form {
     position: absolute;
-    left:40%;
+    left: 40%;
+    top: 50%;
 }
-#username{
 
+#username {
     border: 5px solid white;
     border-radius: 20px;
-    -webkit-box-shadow:
-    inset 0 0 8px  lightblue,
-    0 0 16px lightblue;
-    -moz-box-shadow:
-    inset 0 0 8px  lightblue,
-    0 0 16px lightblue;
-    box-shadow:
-    inset 0 0 8px  lightblue,
-    0 0 16px lightblue;
+    -webkit-box-shadow: inset 0 0 8px lightskyblue,
+    0 0 16px lightskyblue;
+    -moz-box-shadow: inset 0 0 8px lightskyblue,
+    0 0 16px lightskyblue;
+    box-shadow: inset 0 0 8px lightskyblue,
+    0 0 16px lightskyblue;
     padding: 15px;
-    background: rgba(255,255,255,0.5);
+    background: rgba(255, 255, 255, 0.5);
     margin: 0 0 10px 0;
 }
 
+#submit{
+    position: absolute;
+    top: 5px;
+    left: 110%;
+}
+/********************FORM********************/
 
+/*******************RESULT*******************/
 #result, #user {
     text-align: center;
-    font-size: 6em;
+    font-size: 4.5em;
 }
 
 #result > span, #user {
-    color: lightblue;
+    color: lightskyblue;
+}
+/*******************RESULT*******************/
+
+/********************FOOTER*********************/
+
+#footer {
+    text-align: center;
 }
 
 #footer > img {
-    left: 10%;
     height: 50px;
     width: 50px;
 }
@@ -64,46 +92,46 @@ hr:after {  /* Not really supposed to work, but does */
     text-align: center;
 }
 
-
-* {
-    margin: 0;
-}
-
-html, body {
-    height: 100%;
-}
 .page-wrap {
     min-height: 100%;
     /* equal to footer height */
     margin-bottom: -100px;
 }
+
 .page-wrap:after {
     content: "";
     display: block;
 }
+
 .footer, .page-wrap:after {
     /* .push must be the same height as footer */
     height: 100px;
 }
 
+/********************FOOTER*********************/
+
+
+/********************TWEETCYCLER********************/
 #cycler, #cycler2 {
-    font-size: 3em;
+    font-size: 2em;
     text-align: center;
+
 }
 
-.twitterHandle{
-    color: lightblue;
+.twitterHandle {
+    color: lightskyblue;
 }
 
-#cyclerContainer {
-}
+/********************TWEETCYCLER********************/
 
+
+/********************SPINNER********************/
 .spinner {
-    display:none;
+    display: none;
     width: 40px;
     height: 40px;
     margin: 100px auto;
-    background-color: lightblue;
+    background-color: lightskyblue;
 
     border-radius: 100%;
     -webkit-animation: scaleout 1.0s infinite ease-in-out;
@@ -111,7 +139,9 @@ html, body {
 }
 
 @-webkit-keyframes scaleout {
-    0% { -webkit-transform: scale(0.0) }
+    0% {
+        -webkit-transform: scale(0.0)
+    }
     100% {
         -webkit-transform: scale(1.0);
         opacity: 0;
@@ -122,9 +152,12 @@ html, body {
     0% {
         transform: scale(0.0);
         -webkit-transform: scale(0.0);
-    } 100% {
-          transform: scale(1.0);
-          -webkit-transform: scale(1.0);
-          opacity: 0;
-      }
+    }
+    100% {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+        opacity: 0;
+    }
 }
+
+/********************SPINNER********************/

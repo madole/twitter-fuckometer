@@ -18,8 +18,8 @@ function getFucksFromServer(){
   showTweetCycler();
 
   $.getJSON('http://localhost:8000/getFucks?username='+ username +'', function(obj) {
-    var resultText = 'In the last <span>100</span> tweets, you have given <span>'+obj.count+'</span> fucks!';
-    user.text('@' + username);
+    var resultText = 'In the last <span>100</span> tweets, you have<br> given <span>'+obj.count+'</span> fucks!';
+    user.html('<a href="http://twitter.com/'+ username + '"> @' + username +'</a>');
     $('.spinner').hide();
     result.html(resultText);
     result.addClass('animated fadeIn');
@@ -44,7 +44,7 @@ function showTweetCycler(tweets) {
     current.html(tweets[Math.floor(Math.random() * tweets.length)]);
     current.removeClass();
     current.addClass('animated flipInX');
-  }, 5000);
+  }, 7000);
 }
 
 function getNext(current) {

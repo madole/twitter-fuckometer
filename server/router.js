@@ -16,8 +16,10 @@ var twit = new Twit({
 
 function getFucksFromTwitter(req, res) {
   var query = req._parsedUrl.query.split('=');
-  if(!query[0] === 'username') {return;}
-  var search = '@' + query[1];
+  if(query[0] !== 'username') {return;}
+  var username = query[1];
+  var search = (username.indexOf('@')===0) ? username : '@' + username;
+
   console.log(search)
   twit.get('statuses/user_timeline', {screen_name: search, count: 100}, function(err, data) {
     var retObj = {
@@ -30,19 +32,21 @@ function getFucksFromTwitter(req, res) {
       return;
     }
     data.forEach(function(tweet){
-
       if(tweet.text.toLowerCase().indexOf('fuck') !== -1) {
-
         var tweetArr = tweet.text.split(' ');
+
         tweetArr = tweetArr.map(function(word) {
-          if(word.indexOf('@')===0) {
+          if(word.indexOf('@') !== -1) {
             word = '<span class="twitterHandle"><a href="http://twitter.com/'+word+'">'+word+'</a></span>';
+          }
+          if(word.indexOf('fuck') !== -1){
+            retObj.count++;
           }
           return word;
         });
+
         tweet.text = tweetArr.join(' ');
         retObj.tweets.push(nl(tweet.text + ' ' + moment(tweet.created_at).fromNow()));
-        retObj.count++;
       }
     });
     console.log('Your percentage of fucks given in the last 100 tweets is: ' + retObj.count + '%');
