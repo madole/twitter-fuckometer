@@ -15,9 +15,8 @@ function getFucksFromServer(){
   var username    = $("#username").val();
   $('#form').addClass('animated hinge');
   $('.spinner').show();
-  showTweetCycler();
 
-  $.getJSON('http://localhost:8000/getFucks?username='+ username +'', function(obj) {
+  $.getJSON('http://afternoon-citadel-9782.herokuapp.com/getFucks?username='+ username +'', function(obj) {
     var resultText = 'In the last <span>100</span> tweets, you have<br> given <span>'+obj.count+'</span> fucks!';
     user.html('<a href="http://twitter.com/'+ username + '"> @' + username +'</a>');
     $('.spinner').hide();

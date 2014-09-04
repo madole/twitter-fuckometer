@@ -63,7 +63,8 @@ app.all('*', function(req, res, next) {
 
 app.get('/getFucks/', getFucksFromTwitter);
 
-var server = app.listen(8000, function() {
+var port = Number(process.env.PORT || 8000)
+var server = app.listen(port, function() {
   console.log('Listening on port %d', server.address().port);
 });
 
