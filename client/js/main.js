@@ -7,7 +7,18 @@ $(document).ready(function(){
   $('#form').addClass('animated bounceInRight');
   $('hr').addClass('animated fadeIn');
   $('#footer').addClass('animated bounceInUp');
+
+  $("#username").bind("keypress", {}, keypressInBox);
 });
+
+
+function keypressInBox(e) {
+  var code = (e.keyCode ? e.keyCode : e.which);
+  if (code == 13) {
+    e.preventDefault();
+    getFucksFromServer();
+  }
+};
 
 function getFucksFromServer(){
   var result      = $('#result');
