@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Lato', sans-serif;
+}
+
+hr {
+    border: 0;
+    height: 0; /* Firefox... */
+    box-shadow: 0 0 10px 1px lightskyblue;
+}
+
+hr:after {
+    /* Not really supposed to work, but does */
+    content: "\00a0"; /* Prevent margin collapse */
+}
+
+a{
+    text-decoration: none;
+    color: lightskyblue;
+}
+
+a:hover{
+    color:lightblue;
+}
+
+/*******************TITLE*******************/
+#title {
+    text-align: center;
+    font-size: 8em;
+}
+
+#title > span {
+    color: lightskyblue;
+}
+/*******************TITLE*******************/
+
+/********************FORM********************/
+#form {
+    position: absolute;
+    left: 40%;
+    top: 50%;
+}
+
+#username {
+    border: 5px solid white;
+    border-radius: 20px;
+    -webkit-box-shadow: inset 0 0 8px lightskyblue,
+    0 0 16px lightskyblue;
+    -moz-box-shadow: inset 0 0 8px lightskyblue,
+    0 0 16px lightskyblue;
+    box-shadow: inset 0 0 8px lightskyblue,
+    0 0 16px lightskyblue;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.5);
+    margin: 0 0 10px 0;
+}
+
+#submit{
+    position: absolute;
+    top: 5px;
+    left: 110%;
+}
+/********************FORM********************/
+
+/*******************RESULT*******************/
+#result, #user {
+    text-align: center;
+    font-size: 4.5em;
+}
+
+#result > span, #user {
+    color: lightskyblue;
+}
+/*******************RESULT*******************/
+
+/********************FOOTER*********************/
+
+#footer {
+    text-align: center;
+}
+
+#twittericon {
+    height: 50px;
+    width: 50px;
+}
+
+#footer > span {
+    text-align: center;
+}
+
+.page-wrap {
+    min-height: 100%;
+    /* equal to footer height */
+    margin-bottom: -100px;
+}
+
+.page-wrap:after {
+    content: "";
+    display: block;
+}
+
+.footer, .page-wrap:after {
+    /* .push must be the same height as footer */
+    height: 100px;
+}
+
+/********************FOOTER*********************/
+
+
+/********************TWEETCYCLER********************/
+#cycler, #cycler2 {
+    font-size: 2em;
+    text-align: center;
+
+}
+
+.twitterHandle {
+    color: lightskyblue;
+}
+
+/********************TWEETCYCLER********************/
+
+
+/********************SPINNER********************/
+.spinner {
+    display: none;
+    width: 40px;
+    height: 40px;
+    margin: 100px auto;
+    background-color: lightskyblue;
+
+    border-radius: 100%;
+    -webkit-animation: scaleout 1.0s infinite ease-in-out;
+    animation: scaleout 1.0s infinite ease-in-out;
+}
+
+@-webkit-keyframes scaleout {
+    0% {
+        -webkit-transform: scale(0.0)
+    }
+    100% {
+        -webkit-transform: scale(1.0);
+        opacity: 0;
+    }
+}
+
+@keyframes scaleout {
+    0% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+    }
+    100% {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+        opacity: 0;
+    }
+}
+
+/********************SPINNER********************/
